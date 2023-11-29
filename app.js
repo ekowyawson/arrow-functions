@@ -108,27 +108,23 @@ const newObject = array => ({
 
 
 
-let sum = function(a, b, c, d) {
-  return a + b + c + d;
-};
+let sum = (a, b, c, d) =>  a + b + c + d;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log(sum(1, 2, 3, 4));
 
 
-let objectLit = function() {
-  return {
-    key1: 'value1',
-    key2: 'value2',
-    key3: 'value3',
-  };
-};
+let objectLit = () => ({
+      key1: 'value1',
+      key2: 'value2',
+      key3: 'value3',
+    });
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log(objectLit());
 
 
-let sumAndProduct = function(a, b) {
+let sumAndProduct = (a, b) => {
   let sum = a + b;
   let product = a * b;
   return [sum, product];
@@ -138,12 +134,10 @@ let sumAndProduct = function(a, b) {
 // console.log(sumAndProduct(3, 9));
 
 
-let message = function(name) {
-  return `Hello, ${name}!`;
-};
+let message = (name) => `Hello, ${name}!`;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(message('Allie'));
+//console.log(message('Allie'));
 
 
 let Student = function(name, age, hometown) {
@@ -174,9 +168,7 @@ Student.prototype.greeting = function() {
 
 
 
-Student.courseName = function() {
-  return 'This student is enrolled in Code 301.';
-};
+Student.courseName = () => 'This student is enrolled in Code 301.';
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log(Student.courseName());
@@ -190,17 +182,17 @@ Student.prototype.scope = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scope();
+joe.scope();
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scopeArrow();
+joe.scopeArrow();
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+// Student { name: 'Joe Schmoe', age: 100, hometown: 'Anytown, USA' }
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+// Window http://127.0.0.1:5500/index.html
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// The value of this is the same as the this of the enclosing scope (the surrounding non-arrow function). If there isn’t a non-arrow function scope surrounding, the this context will be, in the browser, the global window object.
